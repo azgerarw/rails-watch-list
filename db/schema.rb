@@ -12,7 +12,25 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_24_083600) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
+  create_table "bookmarks", force: :cascade do |t|
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.string "overview"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
