@@ -1,0 +1,12 @@
+<h1>lists</h1>
+
+
+  <%= link_to "New list", "/lists/new"%>
+  <ul>
+    <% @lists.each do |l|%>
+      <li><%= link_to l.name, list_path(l) %> <%= link_to "Delete",
+    list_path(l),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %></li>
+    <% end%>
+  </ul>
